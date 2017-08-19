@@ -12,12 +12,23 @@
 
 <body>
 	<H1>Accounts</H1>
+	<%
+		String messageString = request.getParameter("message");
+		if (messageString != null) {
+			pageContext.setAttribute("message_string", messageString);
+	%>
+		<p><i>${message_string}</i></p>
+	<%
+		}
+	%>
+
 	<form action="/add" method="post">
 		<div>
 			<input type="submit" value="Add Account" />
 		</div>
 
 	</form>
+
 
 	<%
 		List<Account> accounts = ObjectifyService.ofy().load().type(Account.class).list();// .order("billingStatus")       

@@ -19,7 +19,12 @@ public class Account {
 	public String token;
 
 	public Account() {
-		name = UUID.randomUUID().toString() + " account";
+		//mock values
+		String uuid = UUID.randomUUID().toString();
+		name = ("account " + uuid).substring(0, 40);
+		email = uuid + "@akcom.agency";
+		companyName = uuid + " company";
+		
 	}
 
 }
