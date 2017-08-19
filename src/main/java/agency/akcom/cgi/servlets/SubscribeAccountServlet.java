@@ -42,7 +42,7 @@ public class SubscribeAccountServlet extends HttpServlet {
 			CGCustomer cgCustomer = null;
 			try {
 				CGService cgService = new CGService(USER_NAME, PASSWORD, PRODUCT_CODE);
-				cgCustomer = cgService.createNewCustomer(Long.toString(account.id), account.name + "---", account.name,
+				cgCustomer = cgService.createNewCustomer(Long.toString(account.id), account.name, account.name,
 						account.email, account.companyName, FREE_SUBSCRIPTION_PLAN_CODE,
 						// we assume to subscribe to FREE plan, so no credit card information needed.
 						null, null, null, null, null, null, null);
